@@ -1,14 +1,13 @@
-import React, { useState, useEffect } from "react";
+// eslint-disable-next-line
+import React, { useState, useRef } from "react";
 import styled from "styled-components";
 import stationData from "./stationInfo.json";
-import { initConnection } from "../service/socketService";
-
+import { Canvas } from "@react-three/fiber";
+import { OrbitControls } from "@react-three/drei";
 export default function Home() {
   const [stationLine, setStationLine] = useState("");
   const stationDataList = stationData.DATA;
-  useEffect(() => {
-    initConnection(1, "myname", false);
-  }, []);
+
   return (
     <MainWrapper>
       <h1>지하철역 검색</h1>
@@ -28,7 +27,6 @@ export default function Home() {
 
       <h2>노선</h2>
 
-      <div></div>
       <div
         style={{
           display: "flex",
@@ -61,3 +59,22 @@ const MainWrapper = styled.article`
   margin: 0 auto;
   overflow: auto;
 `;
+
+// <div>
+//   {/* 카메라 + 렌더러 */}
+//   <Canvas style={{ height: "100vh", width: "100vw" }}>
+//     {/* 카메라 시점 이동 */}
+//     <OrbitControls autoRotate={true} />
+//     <mesh>
+//       {/* 카메라 위치 */}
+//       <ambientLight intensity={0.5} />
+//       {/* 조명 (position위치에서 angle각도로 조명을)*/}
+//       <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
+//       <directionalLight position={[-1, 0, 1]} intensity={0.5} />
+//       {/* 구 그리기 */}
+//       <boxGeometry attach="geometry" args={[1, 1, 1]} />
+//       {/* 구의 색상 */}
+//       <meshStandardMaterial attach="material" color={0xa3b18a} />
+//     </mesh>
+//   </Canvas>
+// </div>;
