@@ -33,9 +33,10 @@ export default function Home() {
       <Zoom
         img={stationImage}
         zoomScale={4}
-        width={800}
-        height={500}
+        width={600}
+        height={600}
         zoomStyle="opacity: 0.5;"
+        transitionTime={0.5}
       />
 
       <div
