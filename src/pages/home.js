@@ -3,7 +3,7 @@ import React, { useState, useRef } from "react";
 import styled from "styled-components";
 import stationData from "./stationInfo.json";
 import Zoom from "react-img-zoom";
-// 이미지 불러오기
+ 
 import stationImage from "./hello.png";
 // import { Canvas } from "@react-three/fiber";
 // import { OrbitControls } from "@react-three/drei";
@@ -17,7 +17,7 @@ export default function Home() {
 
       <select onChange={(e) => setStationLine(e.target.value)}>
         <option value="">지하철호선 선택하세요</option>
-        <option value="01호선">1호선</option>ㅇ
+        <option value="01호선">1호선</option>
         <option value="02호선">2호선</option>
         <option value="03호선">3호선</option>
         <option value="04호선">4호선</option>
